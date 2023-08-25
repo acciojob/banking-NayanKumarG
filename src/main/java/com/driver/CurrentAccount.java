@@ -36,6 +36,7 @@ public class CurrentAccount extends BankAccount {
         // If the characters of the license Id can be rearranged to create any valid license Id
         // If it is not possible, throw "Valid License can not be generated" Exception
         String s = this.tradeLicenseId;
+        if(isValid(this.tradeLicenseId)) return;
         HashMap<Character, Integer> map = new HashMap<>();
 
         for (int i = 0; i < s.length(); i++) {
@@ -68,5 +69,13 @@ public class CurrentAccount extends BankAccount {
         this.tradeLicenseId = sb.toString();
 //            return sb.toString();
 
+    }
+    public boolean isNumberValid(String licenseId){
+        for(int i=0; i<licenseId.length()-1; i++){
+            if(licenseId.charAt(i) == licenseId.charAt(i+1)){
+                return false;
+            }
+        }
+        return true;
     }
 }
