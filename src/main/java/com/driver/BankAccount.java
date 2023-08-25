@@ -55,6 +55,7 @@ public class BankAccount {
             }
             else{
                 accNumber+= Integer.toString(ramain);//String.valueOf(ramain);
+                ramain = 0;
             }
             digits--;
         }
