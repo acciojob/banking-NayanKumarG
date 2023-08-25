@@ -11,4 +11,7 @@ public class StudentAccount extends BankAccount{
 
     }
 
+    public String getInstitutionName() {
+        return institutionName;
+    }
 }
